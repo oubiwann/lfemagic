@@ -1,5 +1,7 @@
 
-## lfemagic - An IPython extention for LFE (Lisp Flavoured Erlang)
+## lfemagic
+
+*An IPython extention for LFE (Lisp Flavoured Erlang)*
 
 This work was forked from the HyMagic code by @yardsale8
 
