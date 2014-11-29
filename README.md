@@ -1,18 +1,18 @@
 
-## hymagic - A ipython extention for the hy LISP langauge
-[Hylang](hylang.org), or simply hy, is a LISP language that is built on top of
-the [Python programming language](python.org).
+## lfemagic - An IPython extention for LFE (Lisp Flavoured Erlang)
 
-The `hymagic` ipython extension allows you to execute hylang code interactively
-in a ipython console, qtconsole, or notebook.
+This work was forked from the HyMagic code by @yardsale8
+
+The `lfemagic` IPython extension allows one to execute hylang code interactively
+in a IPython console, qtconsole, or notebook.
 
 ### Installation
 
-You can install the hymagic package using
+TBD
 
-    $ pip install hymagic
+### Loading the `lfemagic` extension
 
-### Loading the `hymagic` extension
+#### In a Running IPython
 
 In[1]:
 
@@ -20,61 +20,37 @@ In[1]:
 %load_ext hymagic
 ```
 
-### Executing a hylang cell
+#### In an IPython Configuration
 
-You can execute a hylang cell using the `%%hylang magic` as shown below.
+TBD
+
+### Executing an LFE cell
+
+You can execute an LFE cell using the `%%lfe magic` as shown below.
 
 In[2]:
 
 ```
-%%hylang
-(defn add1 [n]
+%%lfe
+(defun add1 (n)
     (+ n 1))
 
-(print (add1 5))
-(add1 11)
+(lfe_io:format (add1 5))
 ```
 
 
     6
 
 
+### Execute an LFE line
 
-
-    12L
-
-
-
-### Python interopt
-
-Since hylang code is executed as python AST nodes in the regular ipython kernel,
-you can freely intersperse hylang code and python code.
-
-In[3]:
-
-```
-#Here we call the add1 function defined above in 
-#regular python code
-for i in range(4):
-    print(add1(i))
-```
-
-
-    1
-    2
-    3
-    4
-
-
-### Execute a hylang line
-
-You can also use the `%hylang` magic to execute one line of code
+You can also use the `%lfe` magic to execute one line of code
 
 In[4]:
 
 ```
 a = 5
-%hylang (setv a (add1 a)) 
+%lfe (sev a (add1 a)) 
 a = a + 1
 print(a)
 ```
@@ -82,8 +58,3 @@ print(a)
 
     7
 
-
-### TODO
-
-* Setup testing
-* See if it is possible to hijack IPython's completion
